@@ -36,21 +36,6 @@ Automatiza a formação de tempos operacionais da Engenharia de Tempos e Método
    cd <PASTA-DO-REPOSITORIO>
    ```
 
-2. (Opcional, recomendado) Crie um ambiente virtual:
-
-   ```bash
-   python -m venv .venv
-   # Windows (PowerShell):
-   .venv\Scripts\Activate.ps1
-   # Linux / macOS:
-   source .venv/bin/activate
-   ```
-
-3. Instale as dependências:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ## Arquivos necessários na mesma pasta do `back-end.py`
 
@@ -64,13 +49,6 @@ Esses três arquivos são os do kit oficial do desafio.
 
 ## Como executar
 
-Na pasta do projeto:
-
-```bash
-python back-end.py
-```
-
-(No Windows, se `python` não for reconhecido, use `py back-end.py`.)
 
 ### Resultado esperado para o cenário oficial (`demanda_000.txt`)
 
@@ -95,11 +73,8 @@ TEMPO TOTAL DA OPERAÇÃO (TP): 0.9409 min
 Ficha salva em: .../PO-SL-001_gerada.ods
 ```
 
-Além da tela, é gerado o arquivo **`PO-SL-001_gerada.ods`** (nome = título da operação + `_gerada.ods`), com o mesmo layout do `PO-SL-000.ods` mais as linhas de **TP** em minutos, horas e dias. Se o `PO-SL-000.ods` não estiver na pasta, o programa mostra a ficha na tela e avisa que não gerou o `.ods`.
-
 ## Formato do arquivo de demanda (`.txt`)
 
-Uma informação por linha, no formato `Chave: valor`. Acentos e maiúsculas nas chaves são ignorados.
 
 ```
 Título: PO-SL-001
@@ -120,36 +95,11 @@ Elementos: 2.1, 1.1, 3.1
 
 ## Configurações
 
-No topo de `back-end.py`:
 
-```python
-HORAS_POR_DIA = 8   # 8 = jornada de trabalho; use 24 para dia corrido
-```
 
 ## Estrutura do código (`back-end.py`)
 
-| Parte | Responsabilidade |
-|---|---|
-| `ElementoMTM`, `Equipamento`, `Peca`, `ProcessoOperacional` | Modelo de dados e motor de cálculo (`gerar_relatorio_po`) |
-| `LeitorPlanilhas` | Leitura de `Entradas.ods` e do arquivo de demanda `.txt` |
-| `exportar_po_ods` | Preenche o modelo `PO-SL-000.ods` e salva a ficha final |
-| bloco `if __name__ == "__main__"` | Fluxo completo: ler → calcular → exibir → exportar |
-
 ## Premissas
-
-- Os **limites de RPM** (inferior e superior) são calculados como padrão × 0,9 e padrão × 1,1, a mesma regra das fórmulas do modelo `PO-SL-000.ods`.
-- A conversão de **horas em dias** usa `HORAS_POR_DIA = 8` (ajustável).
-- A **frequência** de cada elemento é 1, como no gabarito oficial.
-
-## Solução de problemas
-
-| Mensagem | O que fazer |
-|---|---|
-| `ModuleNotFoundError: No module named 'odf'` | Rode `pip install odfpy` |
-| `ModuleNotFoundError: No module named 'pandas'` | Rode `pip install pandas` |
-| `FileNotFoundError: ... Entradas.ods` (ou `demanda_000.txt`) | Coloque o arquivo na mesma pasta do `back-end.py` |
-| `Equipamento X não existe na aba TEMPO-CM` | Confira o valor de `Cód. Eqp` na demanda |
-| `[AVISO] Elemento 'X' não encontrado no catálogo MTM` | Confira os códigos em `Elementos` na demanda |
 
 ## Licença e propriedade intelectual
 
