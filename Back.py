@@ -106,4 +106,3 @@ def carrega_estatisticas(self):
         )
         self.maquinas[equipamento.nome] = equipamento
         
-        
