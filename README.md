@@ -10,7 +10,7 @@ Solução desenvolvida pela equipe **Stake Queens** para o **Hackathon Auto-T&M 
 | Anna Beatriz Correia dos Santos | a2586436 |
 | Érika Fernanda Santos de Souza | a2478382 |
 | Bianca Gabrielly Siqueira | a2586444 |
-| Laura | a2586444 |
+| Laura Stinghen | a2764229 |
 
 ## O que o programa faz
 
