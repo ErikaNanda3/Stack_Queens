@@ -9,6 +9,8 @@ Solução desenvolvida pela equipe **Stake Queens** para o **Hackathon Auto-T&M 
 | Arieli Leandro Gutierres | a2669447 |
 | Anna Beatriz Correia dos Santos | a2586436 |
 | Érika Fernanda Santos de Souza | a2478382 |
+| Bianca Gabrielly Siqueira | a2586444 |
+| Laura | a2586444 |
 
 ## O que o programa faz
 
@@ -24,8 +26,19 @@ Automatiza a formação de tempos operacionais da Engenharia de Tempos e Método
 
 ## Requisitos
 
-- **Python 3.10 ou superior** (testado com Python 3.13; o desenvolvimento no Windows usou Python 3.14)
-- Bibliotecas: `pandas` e `odfpy` (listadas em `requirements.txt`)
+- **Python 3.10 ou superior**
+- Bibliotecas necessárias:
+  - `pandas` (manipulação de tabelas e dados)
+  - `odfpy` (leitura da planilha de apoio `.ods`)
+  - `openpyxl` (geração e exportação da planilha `.xlsx`)
+  - `streamlit` (interface web interativa)
+
+Instale as dependências executando:
+
+```bash
+pip install pandas odfpy openpyxl streamlit
+```
+
 
 ## Instalação
 
@@ -35,7 +48,6 @@ Automatiza a formação de tempos operacionais da Engenharia de Tempos e Método
    git clone <https://github.com/ErikaNanda3/Stack_Queens.git>
    cd <PASTA-DO-REPOSITORIO>
    ```
-
 
 ## Arquivos necessários na mesma pasta do `back-end.py`
 
@@ -49,6 +61,26 @@ Esses três arquivos são os do kit oficial do desafio.
 
 ## Como executar
 
+### 1. Pela Interface Gráfica Web (Recomendado)
+
+Inicia a aplicação web interativa no navegador:
+
+```bash
+streamlit run interface.py
+```
+
+Na interface você pode:
+- Clicar no botão **"Usar demanda_000.txt (Oficial)"** ou fazer upload de novos arquivos `.txt`.
+- Editar parâmetros de produto, selecionar equipamentos cadastrados e a sequência MTM.
+- Visualizar os tempos calculados, a grade visual de elementos e exportar a ficha em **Excel (.xlsx)** ou **CSV**.
+
+### 2. Pelo Terminal (Modo Backend Direto)
+
+Executa diretamente o cálculo via terminal com a demanda padrão:
+
+```bash
+python Back.py
+```
 
 ### Resultado esperado para o cenário oficial (`demanda_000.txt`)
 
@@ -96,7 +128,7 @@ Elementos: 2.1, 1.1, 3.1
 
 
 
-## Estrutura do código (`back-end.py`)
+## Estrutura do código (`Back.py`)
 
 ## Premissas
 
