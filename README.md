@@ -32,7 +32,7 @@ Automatiza a formação de tempos operacionais da Engenharia de Tempos e Método
 1. Clone o repositório (ou baixe e extraia o ZIP):
 
    ```bash
-   git clone <URL-DO-REPOSITORIO>
+   git clone <https://github.com/ErikaNanda3/Stack_Queens.git>
    cd <PASTA-DO-REPOSITORIO>
    ```
 
@@ -68,7 +68,6 @@ ELEMENTOS:
 --------------------------------------------------
 TEMPO TOTAL DA OPERAÇÃO (TP): 0.9409 min
                               0.015682 h
-                              0.00196 dia(s) de 8 h
 
 Ficha salva em: .../PO-SL-001_gerada.ods
 ```
